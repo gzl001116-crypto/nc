@@ -158,7 +158,7 @@ export function renderAuth({ user, config, mode, query }) {
           <label>验证码<input name="code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required autocomplete="one-time-code"></label>
           <label>密码<input name="password" type="password" required minlength="8" maxlength="72" autocomplete="${login ? 'current-password' : 'new-password'}"></label>
           <div class="row-actions">
-            <button class="btn ghost" type="submit" formaction="/api/auth/send-code">获取验证码</button>
+            <button class="btn ghost" type="submit" formaction="/api/auth/send-code" formnovalidate>获取验证码</button>
             <button class="btn gold" type="submit">${login ? '登录' : '注册'}</button>
           </div>
           <p class="note" data-auth-status></p>
