@@ -1,0 +1,28 @@
+{
+  "name": "ncstar",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_OPTIONS='--experimental-sqlite' next dev",
+    "build": "NODE_OPTIONS='--experimental-sqlite' next build",
+    "start": "NODE_OPTIONS='--experimental-sqlite' next start",
+    "test": "NODE_OPTIONS='--experimental-sqlite' node --import tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "next": "^15.5.4",
+    "nodemailer": "^7.0.6",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^22.15.30",
+    "@types/nodemailer": "^6.4.17",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}
