@@ -1,6 +1,6 @@
 import crypto from "crypto";
 import { sameOriginUrl } from "./format";
-import { normalizeParams, signParams, verifyParams } from "./sign";
+import { signParams, verifyParams } from "./sign";
 import { one, run, type DB } from "./db";
 
 export type GatewayRow = {
@@ -258,5 +258,5 @@ export function queryToParams(searchParams: Record<string, string | string[] | u
     const text = Array.isArray(value) ? value[0] : value;
     if (text) params[key] = text;
   }
-  return normalizeParams(params);
+  return params;
 }

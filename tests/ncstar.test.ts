@@ -5,7 +5,7 @@ import path from "path";
 import test from "node:test";
 import { issueEmailCode, loginUser, registerUser } from "../lib/auth";
 import { openDatabase, one, run, type DB } from "../lib/db";
-import { gatewayPay, gatewayQuery, gatewayReturnOnly, gatewaySettle, openCheckout } from "../lib/gateway";
+import { gatewayPay, gatewayQuery, gatewayReturnOnly, gatewaySettle, openCheckout, queryToParams } from "../lib/gateway";
 import { formatCents, splitAmount, yuanToCents } from "../lib/money";
 import {
   createOrder,
@@ -196,7 +196,8 @@ test("下单不收款，只有验签回调才入账，重复回调只记一次",
   assert.equal(created.order.amount_cents, 199);
   assert.equal(listLedger(db, author).length, 0);
   const checkout = new URL(created.payUrl);
-  const params = Object.fromEntries(checkout.searchParams);
+  const params = queryToParams(Object.fromEntries(checkout.searchParams));
+  assert.equal(typeof params.sign, "string");
   assert.equal(openCheckout(db, params, SECRET, URLS.appBaseUrl, now).ok, true);
 
   const returned = gatewayReturnOnly(db, created.order.order_no, URLS.appBaseUrl);
