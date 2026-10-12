@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="NCstar">
+  <title>NCstar</title>
+  <rect width="64" height="64" rx="16" fill="#141a28"/>
+  <path fill="#e4b56a" d="M32 5.2 36.4 24.6 56.8 32 36.4 39.4 32 58.8 27.6 39.4 7.2 32 27.6 24.6Z"/>
+  <path fill="#141a28" d="M32 17.2 34.8 27.6 45.6 32 34.8 36.4 32 46.8 29.2 36.4 18.4 32 29.2 27.6Z"/>
+  <circle cx="32" cy="32" r="3.3" fill="#9fd4cb"/>
+</svg>

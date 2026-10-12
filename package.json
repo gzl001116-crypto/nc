@@ -1,0 +1,21 @@
+{
+  "name": "ncstar",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "NCstar 小说、漫画与影像站点",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "cookie-parser": "^1.4.7",
+    "express": "^4.22.3",
+    "multer": "^2.4.0",
+    "nodemailer": "^10.1.0"
+  }
+}
